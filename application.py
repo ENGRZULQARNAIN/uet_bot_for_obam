@@ -30,7 +30,9 @@ async def chat_completion(request: ChatCompletionRequest):
     try:
         # Run the agent with the user's message
         result = agent_executor.invoke({"input": request.message})
-        return ChatCompletionResponse(response=result["output"])
+        print(result)
+        result = result["output"]
+        return ChatCompletionResponse(content=result)
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 if __name__ == "__main__":
