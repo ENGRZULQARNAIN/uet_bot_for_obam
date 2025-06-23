@@ -1,4 +1,3 @@
-from langchain_openai import ChatOpenAI
 from langchain.agents import create_react_agent, AgentExecutor
 from langchain.tools.retriever import create_retriever_tool
 from preprocess import vectorstore
